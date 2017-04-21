@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<!-- Совместимость с IE различных версий -->
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Проверка верстки/js</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/common.css">
+<body>	
+
+<!-- Проверка PHP -->
+	<a href="valid_php.html" id="order_close"> Проверка PHP </a>		
+
+<!------------------------------------------------------------------------------------ Валидация форм -------------------------------------------------------->
+	<h1>Валидация форм</h1>
+	<form action="javascript:return false;" id="form_valid">	
+		<fieldset>
+			<legend> Валидатор форм: </legend>
+				<label> name:</label>
+					<input id="name" type="text" name="name" placeholder="Имя"/>
+				<label> phone:</label>
+					<input id="digits" type="digits" name="digits" placeholder="Телефон"/>	
+				<label> e-mail:</label>
+					<input id="email" type="email" name="email" placeholder="Email" />
+			<input type="submit" name="form_send" class="form_send" value="Зарегистрироваться" />
+			<input type="button" name="form_undo" class="form_undo" value="Undo" />
+		</fieldset>
+	</form>		
+
+
+<!---------------------------------------------------------------------------------- Сетка для каталога -------------------------------------------------------->
+	<h1>Сетка для каталога</h1>
+	<input type="button" name="button_mod" id="button_mod" value="Плитка/Список" />	
+	<div class="catalog catalog_mod">
+		<div class='block block_mod'></div>
+		<div class='block block_mod'></div>
+		<div class='block block_mod'></div>
+		<div class='block block_mod'></div>
+		<div class='block block_mod'></div>
+	</div>
+	<input type="button" name="block_button" id="block_button" value="Показать еще" />	
+	
+	
+	<!--[if lt IE 9]>-->
+	<!--<script src="libs/respond/es5-shim.min.js"></script>-->						<!-- Подключаем плагин html5shiv для понимания старым IE html5 -->
+	<!--<script src="libs/respond/html5shiv.min.js"></script>-->
+	<!--<script src="libs/respond/html5shiv-printshiv.min.js"></script>-->
+	<!--<script src="libs/respond/respond.min.js"></script>-->						<!-- Позволяет понимать медиа-запрос -->
+	<!--<![endif]-->
+
+<!-- Подключаем скрипты -->
+	<script src='libs/ajax.js'></script>
+	<script src="libs/jquery-1.11.3.js"></script>	
+	<script src="libs/jquery.validate.js"></script>							
+	<script src="js/common.js"></script>											
+	<noscript id='nojs'> У вас отключен  JavaScript! Для корректной работы включите JavaScript!</noscript>
+	
+</body>
+</html>

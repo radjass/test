@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Совместимость с IE различных версий -->
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Проверка PHP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/common.css">
+<body onload='gallery()'>	
+
+<!--Валидация форм-->
+<a href="index.html" id="order_close"> Валидация форм </a>	
+
+<!------------------------------------------------------------------------------------- Доход по вкладу -------------------------------------------------------->
+	<h1>Доход по вкладу</h1>
+	<form action="javascript:form_vklad()" method="post" id="form_vklad">	
+		<fieldset>
+			<legend> Доход по вкладу: </legend>
+				<label> Сумма вклада:</label>
+					<input id="sum_vklad" type="digits" name="sum_vklad" placeholder="Сумма" />
+				<label> Срок в месяцах:</label>
+					<input id="mes_vklad" type="digits" name="mes_vklad" placeholder="Срок" />	
+				<label> Годовой процент:</label>
+					<input id="proc_vklad" type="digits" name="proc_vklad" placeholder="Процент" />
+			<input type="submit" value="Вычислить" />
+			<p id='rez_vklad' > Результат: </p>
+		</fieldset>
+	</form>		
+
+
+<!----------------------------------------------------------------------------------- Форматированная дата -------------------------------------------------------->
+	<h1>Форматированная дата</h1>
+	<form action="javascript:form_data()" method="post" id="form_data">	
+		<fieldset>
+			<legend> Форматированная дата: </legend>
+				<label> Число:</label>
+					<input id="chis_data" name="chis_data" type='number' value='1' min='1' max='31' step='1' required/>
+				<label> Номер месяца:</label>
+					<input id="mes_data" name="mes_data" type='number' value='1' min='1' max='12' step='1' required/>	
+			<input type="submit" value="Вычислить" />
+			<p id='rez_data' > Результат: </p>
+		</fieldset>
+	</form>	
+
+
+<!--------------------------------------------------------------------------------------- Калькулятор ----------------------------------------------------------->
+	<h1>Калькулятор</h1>
+	<form action="javascript:form_calc()" method="post" id="form_calc">	
+		<fieldset>
+			<legend> Калькулятор: </legend>
+				<label> 1 число:</label>
+					<input id="chis1_calc" name="chis1_calc" type='digits' placeholder="число" pattern="^[0-9.-]+$" required/>
+				<label> Операция:</label>
+					<select name="operand" id="operand" >
+						<option value="1"> + </option>
+						<option value="2"> - </option>
+						<option value="3"> / </option>
+						<option value="4"> * </option>
+					</select>
+				<label> 2 число:</label>
+					<input id="chis2_calc" name="chis2_calc" type='digits' placeholder="число" pattern="^[0-9.-]+$" required/>					
+			<input type="submit" value="Вычислить" />
+			<p id='rez_calc' > Результат: </p>
+		</fieldset>
+	</form>	
+
+<!------------------------------------------------------------------------------------ Угол между стрелками ----------------------------------------------------->
+	<h1>Угол между стрелками</h1>
+	<form action="javascript:form_ygol()" method="post" id="form_ygol">	
+		<fieldset>
+			<legend> Угол между стрелками: </legend>
+				<label> Часы:</label>
+					<input id="chas_ygol" name="chas_ygol" type='number' value='1' min='1' max='12' step='1' required/>
+				<label> Минуты:</label>
+					<input id="min_ygol" name="min_ygol" type='number' value='1' min='1' max='60' step='1' required/>					
+			<input type="submit" value="Вычислить" />
+			<p id='rez_ygol' > Результат: </p>
+		</fieldset>
+	</form>	
+
+
+<!---------------------------------------------------------------------------------------- Фотогалерея ----------------------------------------------------->
+	<h1>Загрузить фото</h1>
+	<form action="javascript:form_upload()" method="post" id='form_upload'>	
+		<fieldset>
+			<legend> Загрузить фото: </legend>
+				<input type='file' multiple='multiple' id='uploadfile' name='uploadfile[]' accept='image' title="Необходимо выбрать минимум один файл" required/>						
+				<input type="submit" value="Загрузить" />
+				<div id='rez_upload'></div>
+		</fieldset>
+	</form>	
+
+	<h1>Фотогалерея</h1>
+	<input type="button" name="button_mod" id="button_mod" value="Плитка/Список" />	
+	<div id='gallery' class="catalog catalog_mod">
+	</div>
+
+	
+	
+	
+	<!--[if lt IE 9]>-->
+	<!--<script src="libs/respond/es5-shim.min.js"></script>-->						<!-- Подключаем плагин html5shiv для понимания старым IE html5 -->
+	<!--<script src="libs/respond/html5shiv.min.js"></script>-->
+	<!--<script src="libs/respond/html5shiv-printshiv.min.js"></script>-->
+	<!--<script src="libs/respond/respond.min.js"></script>-->						<!-- Позволяет понимать медиа-запрос -->
+	<!--<![endif]-->
+
+<!-- Подключаем скрипты -->
+	<script src='libs/ajax.js'></script>
+	<script src="libs/jquery-1.11.3.js"></script>	
+	<script src="libs/jquery.validate.js"></script>							
+	<script src="js/common.js"></script>											
+	<noscript id='nojs'> У вас отключен  JavaScript! Для корректной работы включите JavaScript!</noscript>
+	
+</body>
+</html>
